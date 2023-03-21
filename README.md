@@ -3,4 +3,4 @@ Udacity Devops Cloud Using Azure Lab 2
 
 
 ## Github Actions Tests Passed
-![github_actions_pass_test](https://user-images.githubusercontent.com/52060668/226551931-f9d99789-a83c-4616-aec6-f0eb869448cc.png)
+![github_actions_pass_test](https://user-images.githubusercontent.com/52060668/226552356-76c1c0ca-5a36-4d02-aad8-de892b718346.png)
