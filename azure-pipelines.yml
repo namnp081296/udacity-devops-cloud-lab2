@@ -57,7 +57,7 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    environment: $(webAppName)
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
