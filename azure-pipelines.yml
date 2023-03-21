@@ -9,8 +9,8 @@ variables:
   
   webAppName: 'myflaskapp081296'
 
-  # # Environment name
-  # environmentName: 'flask-ml-service'
+  # Environment name
+  environmentName: 'flask-ml-service'
 
   projectRoot: $(System.DefaultWorkingDirectory)
 
