@@ -25,23 +25,23 @@ stages:
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
-      workingDirectory: $(projectRoot)/starter_files/flask-sklearn/
+      workingDirectory: $(projectRoot)
       displayName: 'myStep 1'
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         make install
-      workingDirectory: $(projectRoot)/starter_files/flask-sklearn/
+      workingDirectory: $(projectRoot)
       displayName: 'myStep 2'
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         make install
         make lint
-      workingDirectory: $(projectRoot)/starter_files/flask-sklearn/
+      workingDirectory: $(projectRoot)
       displayName:  'myStep 3 - Run lint tests'
     - task: ArchiveFiles@2
       displayName: 'myStep 4 - Archive files'
       inputs:
-        rootFolderOrFile: '$(projectRoot)/starter_files/flask-sklearn/'
+        rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
