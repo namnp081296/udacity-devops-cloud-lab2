@@ -14,4 +14,7 @@ lint:
 	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
 	pylint --disable=R,C,W1203,W0702 app.py
 
+deploy:
+	az webapp up --name myflaskapp081296 --resource-group Azuredevops
+
 all: install lint test
