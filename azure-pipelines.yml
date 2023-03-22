@@ -7,7 +7,7 @@ pool: lab02AgentPool
 variables:
   azureServiceConnectionId: 'lab02ServiceConnection'
   
-  webAppName: 'myflaskapp081296'
+  webAppName: 'flaskmlapp'
 
   # Environment name
   environmentName: 'flask-ml-service'
@@ -25,6 +25,7 @@ stages:
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
+        echo $(Pipeline.Workspace)
       workingDirectory: $(projectRoot)
       displayName: 'myStep 1'
     - script: |
