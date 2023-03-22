@@ -12,7 +12,7 @@ After you finish this project, you'll learn:
 * [Tracking Trello Board](https://trello.com/b/6Bz6jB9R/udacity-ml-app)
 
 ## Architectural Diagram
-![](docs/screenshots/cicd_diagram.png)
+![](cicd_diagram.png)
 
 ## Instructions
 ### Step 1: Deploy project with Azure Cloud Shell  
@@ -22,7 +22,7 @@ You need to access to the Azure Cloud Shell first, remember to select the **Bash
 git clone git@github.com:namnp081296/udacity-devops-cloud-lab2.git
 cd udacity-devops-cloud-lab2
 ```
-![](docs/screenshots/cloning_project_to_AZ_CloudShell.png)
+![](lab2_cloning_project_to_AZ_CloudShell.png)
 
 * Create the Python virtual environment
 ```
@@ -35,17 +35,17 @@ source .lab2-venv/bin/activate
 make all
 ```
 You'll see an error like "W0702: No exception type...". 
-![](docs/screenshots/first_time_make_all.png)
+![](lab2_first_time_make_all.png)
 Try edit the Makefile and add it to lint section, then rerun the command
-![](docs/screenshots/add_exception_w0702.png)
+![](lab2_add_exception_w0702.png)
 Result
-![](docs/screenshots/result_make_all.png)
+![](lab2_result_make_all.png)
 
 * Deploy project to Azure App Service
 ```
 make deploy
 ```
-![](docs/screenshots/deploy_service.png)
+![](lab2_deploy_service.png)
 
 ### Step 2: Configure Github Actions for CI
 After testing success in virenv. Next, we'll configure the Github Actions for implementing CI. First, you need to go to your project, and then select **Action** -> **setup a worlflow yourself**, then paste these following code:
@@ -74,7 +74,7 @@ jobs:
         make test
 ```
 Then commit the file. After that, it'll be triggered to run the first time. Here's the result
-![](docs/screenshots/github_actions_pass_test.png)
+![](lab2_github_actions_pass_test.png)
 
 ### Step 3: Deploy project with Azure DevOps
 In this step, we'll configure the Azure Pipeline in Azure Devops. This pipeline have two main steps and there're Build and Deploy
@@ -83,24 +83,24 @@ In this step, we'll configure the Azure Pipeline in Azure Devops. This pipeline 
 Here's the result 
 * Deploy project
 Build Step
-![](docs/screenshots/az_devops_build.png)
+![](lab2_az_devops_build.png)
 Deployment Step
-![](docs/screenshots/az_devops_deploy.png)
+![](lab2_az_devops_deploy.png)
 
 ### Step 4: Verify application is deployed
 To make sure the Flaskml deployed to Azure Portal. Do these following substeps.
 * You need to go to the portal. Type "App Service" and select. Select the application.
-![](docs/screenshots/app_service_deployed.png)
+![](lab2_app_service_deployed.png)
 
 * Next, run the prediction script in Azure Cloud Shell to call prediction API.
 You will get the result as image below
-![](docs/screenshots/make_prediction.png)
+![](lab2_make_prediction.png)
 
 * Check the output of streamed log files
 ```
 az webapp log tail --resource-group Azuredevops --name flaskmlapp
 ```
-![](docs/screenshots/curl_stream_log.png)
+![](lab2_curl_stream_log.png)
 
 ## Enhancements
 There are some suggestions for improving the project as:
